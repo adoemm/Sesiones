@@ -13,14 +13,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%if (request.getSession().getAttribute("sesionUsuario")!=null)
-        {
-%>
+      
         <h1>Se ha iniciado la Sesion</h1>
         <h1>Bienvenido Sr. <%=request.getSession().getAttribute("sesionUsuario")%></h1>
-        <a href="index.jsp">Regresar a Inicio</a>
-        <% }else
-{          response.sendRedirect("index.jsp");
-}%>
+        <a href="servletIndex">Cerrar Sesión</a>
+       
     </body>
 </html>

@@ -71,8 +71,8 @@ public class ServletSalida extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession sesion= request.getSession();
-        sesion.setAttribute("sesionUsuario", request.getParameter("txtUsuario"));
+        HttpSession httpsesion= request.getSession();
+        httpsesion.setAttribute("sesionUsuario", request.getParameter("txtUsuario"));
         request.getRequestDispatcher("salida.jsp").forward(request, response);
     }
 

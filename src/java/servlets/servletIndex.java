@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -56,6 +56,11 @@ public class servletIndex extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        if(request.getSession().getAttribute("sesionUsuario")!=null)
+        {
+            request.getSession().removeAttribute("sesionUsuario");
+        }
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
